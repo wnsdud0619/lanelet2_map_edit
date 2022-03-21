@@ -1,0 +1,8 @@
+tunning_scale: 10
+dir_path: "/home/dgist/map_edit_ws/map"
+lat: 35.648235
+lon: 128.399072
+alt: 0
+x: 445599.97  # lon
+y: 3945099.98 # lat
+z: 0          # alt

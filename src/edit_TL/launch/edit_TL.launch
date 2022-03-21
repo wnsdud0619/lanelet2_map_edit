@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<launch>
+  <arg name="input/image_raw" default="/sensing/camera/traffic_light/image_raw" />
+  <arg name="input/rois" default="/TL/rois" />
+  <arg name="input/camera_info" default="/sensing/camera/traffic_light/camera_info" />
+  <arg name="input/vector_map" default="/map/vector_map" />
+  <arg name="use_sim_time" default="true" />
+
+  <node pkg="edit_TL" type="edit_TL" name="edit_TL" output="screen">
+    <remap from="~input/image_raw" to="$(arg input/image_raw)" />
+    <remap from="~input/rois" to="$(arg input/rois)" />
+    <remap from="~input/camera_info" to="$(arg input/camera_info)" />
+    <remap from="~input/vector_map" to="$(arg input/vector_map)" />
+    <rosparam command="load" file="$(find edit_TL)/config/edit_TL.yaml" />
+  </node>
+</launch>
